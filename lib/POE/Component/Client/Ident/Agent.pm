@@ -257,13 +257,13 @@ The component implements a single ident request. Your session spawns the compone
 some future point will receive either a 'ident_agent_reply' or 'ident_agent_error', depending on the outcome of the query.
 
 If you are looking for a robust method of managing Ident::Agent sessions then please consult the documentation for 
-L<POE::Component::Client::Ident|POE::Component::Client::Ident>, which takes care of Agent management for you.
+L<POE::Component::Client::Ident>, which takes care of Agent management for you.
 
 =head1 CONSTRUCTOR 
 
 =over
 
-=item spawn
+=item C<spawn>
 
 Takes either the arguments: 
 
@@ -295,11 +295,11 @@ Returns an POE::Component::Client::Ident::Agent object, which has the following 
 
 =over
 
-=item session_id
+=item C<session_id>
 
 Returns the POE session ID of the component.
 
-=item shutdown
+=item C<shutdown>
 
 Terminates the component.
 
@@ -314,12 +314,12 @@ The following events are sent to the calling session by the component:
 
 =over
 
-=item ident_agent_reply
+=item C<ident_agent_reply>
 
 Returned when the component receives a USERID response from the identd. ARG0 is hashref, ARG1 is the opsys field and ARG2 is 
 the userid or something else depending on whether the opsys field is set to 'OTHER' ( Don't blame me, read the RFC ).
 
-=item ident_agent_error
+=item C<ident_agent_error>
 
 Returned when the component receives an ERROR response from the identd, there was some sort of communication error with the
 remote host ( ie. no identd running ) or it had some other problem with making the connection to the other host. No matter. ARG0 is hashref, ARG1 is the type of error.
@@ -332,7 +332,7 @@ Chris Williams, E<lt>chris@bingosnet.co.uk<gt>
 
 =head1 LICENSE
 
-Copyright C<(c)> Chris Williams.
+Copyright E<copy> Chris Williams.
 
 This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
@@ -340,6 +340,8 @@ This module may be used, modified, and distributed under the same terms as Perl 
 
 RFC 1413 L<http://www.faqs.org/rfcs/rfc1413.html>
 
-L<POE::Session|POE::Session>
+L<POE::Session>
 
-L<POE::Component::Client::Ident|POE::Component::Client::Ident>
+L<POE::Component::Client::Ident>
+
+=cut

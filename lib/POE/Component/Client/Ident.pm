@@ -157,14 +157,14 @@ POE::Component::Client::Ident - A component that provides non-blocking ident loo
 POE::Component::Client::Ident is a POE component that provides non-blocking Ident lookup services to
 other components and sessions. The Ident protocol is described in RFC 1413 L<http://www.faqs.org/rfcs/rfc1413.html>.
 
-The component takes requests in the form of events, spawns L<POE::Component::Client::Ident::Agent|POE::Component::Client::Ident::Agent> sessions to 
+The component takes requests in the form of events, spawns L<POE::Component::Client::Ident::Agent> sessions to 
 perform the Ident queries and returns the appropriate responses to the requesting session.
 
 =head1 CONSTRUCTOR
 
 =over
 
-=item spawn
+=item C<spawn>
 
 Takes one argument, a kernel alias to christen the new component with.
 
@@ -178,11 +178,11 @@ These methods are available on the poco object returned by spawn().
 
 =over
 
-=item session_id
+=item C<session_id>
 
 Returns the component's session ID.
 
-=item shutdown
+=item C<shutdown>
 
 Takes no arguments. Causes the component to terminate gracefully. Any pending Ident::Agent components that are
 running will be closed without returning events.
@@ -195,7 +195,7 @@ The component accepts the following events:
 
 =over
 
-=item query
+=item C<query>
 
 Takes either the arguments: 
 
@@ -212,7 +212,7 @@ OR:
 
 See the documentation for Ident-Agent for extra parameters you may pass.
 
-=item shutdown
+=item C<shutdown>
 
 Takes no arguments. Causes the component to terminate gracefully. Any pending Ident::Agent components that are
 running will be closed without returning events.
@@ -229,12 +229,12 @@ Port.
 
 =over
 
-=item ident_client_reply
+=item C<ident_client_reply>
 
 Returned when the component receives a USERID response from the identd. ARG0 is hashref, ARG1 is the opsys field and ARG2 is
 the userid or something else depending on whether the opsys field is set to 'OTHER' ( Don't blame me, read the RFC ).
 
-=item ident_client_error
+=item C<ident_client_error>
 
 Returned when the component receives an ERROR response from the identd, there was some sort of communication error with the
 remote host ( ie. no identd running ) or it had some other problem with making the connection to the other host. No matter.
@@ -248,7 +248,7 @@ Chris Williams, E<lt>chris@bingosnet.co.uk<gt>
 
 =head1 LICENSE
 
-Copyright C<(c)> Chris Williams.
+Copyright E<copy> Chris Williams.
 
 This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
@@ -256,4 +256,6 @@ This module may be used, modified, and distributed under the same terms as Perl 
 
 RFC 1413 L<http://www.faqs.org/rfcs/rfc1413.html>
 
-L<POE::Component::Client::Ident::Agent|POE::Component::Client::Ident::Agent>
+L<POE::Component::Client::Ident::Agent>
+
+=cut

@@ -134,7 +134,7 @@ POE::Component::Client::Ident::Agent. They look like this:
 
 =over
 
-=item new
+=item C<new>
 
 Creates a new POE::Filter::Ident object. Takes no arguments.
 
@@ -144,17 +144,17 @@ Creates a new POE::Filter::Ident object. Takes no arguments.
 
 =over
 
-=item get
+=item C<get>
 
 Takes an array reference full of lines of raw Ident text. Returns an
 array reference of processed, pasteurized events.
 
-=item put
+=item C<put>
 
 There is no "put" method. That would be kinda silly for this filter,
 don't you think?
 
-=item debug
+=item C<debug>
 
 Pass true/false value to enable/disable debugging information.
 
@@ -170,12 +170,12 @@ Code for parsing the the Ident messages from Net::Ident by Jan-Pieter Cornet.
 
 =head1 LICENSE
 
-Copyright C<(c)> Chris Williams, Dennis Taylor and Jan-Pieter Cornet.
+Copyright E<copy> Chris Williams, Dennis Taylor and Jan-Pieter Cornet.
 
 This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
 =head1 SEE ALSO
 
-Net::Ident
+L<Net::Ident>
 
 =cut
