@@ -14,7 +14,7 @@ use POE qw(Component::Client::Ident::Agent);
 use Carp;
 use vars qw($VERSION);
 
-$VERSION = '1.14';
+$VERSION = '1.16';
 
 sub spawn {
     my ( $package, $alias ) = splice @_, 0, 2;
